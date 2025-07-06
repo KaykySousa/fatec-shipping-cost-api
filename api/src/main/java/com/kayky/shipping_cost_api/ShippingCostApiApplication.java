@@ -9,5 +9,4 @@ public class ShippingCostApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ShippingCostApiApplication.class, args);
 	}
-
 }

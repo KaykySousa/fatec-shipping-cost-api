@@ -16,6 +16,8 @@ import com.kayky.shipping_cost_api.controller.mapper.OrderMapper;
 import com.kayky.shipping_cost_api_domain.entity.OrderWithFreight;
 import com.kayky.shipping_cost_api_domain.service.OrderService;
 
+import jakarta.validation.Valid;
+
 
 @RestController
 @RequestMapping("/v1/orders")
@@ -28,7 +30,7 @@ public class OrderController {
     }
 
     @PostMapping
-    public FreightResponseDto createOrder(@RequestBody OrderRequestDto orderRequest) {
+    public FreightResponseDto createOrder(@RequestBody @Valid OrderRequestDto orderRequest) {
         OrderWithFreight orderWithFreight = orderService.create(OrderMapper.toEntity(orderRequest));
         return FreightMapper.toDto(orderWithFreight);
     }
