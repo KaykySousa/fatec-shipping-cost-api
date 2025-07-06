@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: shipping_cost_api
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/fatec?serverSelectionTimeoutMS=15000&connectTimeoutMS=15000
+      auto-index-creation: true
+  redis:
+    host: localhost
+    port: 6379
+  cache:
+    redis:
+      cache-null-values: false
